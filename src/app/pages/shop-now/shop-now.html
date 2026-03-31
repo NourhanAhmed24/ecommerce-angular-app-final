@@ -1,0 +1,79 @@
+
+<app-navbar></app-navbar>
+
+<div class="container py-5">
+
+
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Shop Now</h2>
+    <p class="text-muted">Discover our latest collection</p>
+  </div>
+
+ 
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <select class="form-select">
+        <option selected>Category</option>
+        <option>Men</option>
+        <option>Women</option>
+        <option>Shoes</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <select class="form-select">
+        <option selected>Sort By</option>
+        <option>Price Low to High</option>
+        <option>Price High to Low</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Search products...">
+    </div>
+  </div>
+
+
+  <div class="row g-4">
+
+    <div class="col-md-3" *ngFor="let product of products">
+
+      <div class="card product-card h-300 shadow-sm">
+
+      
+        <img 
+          [src]="product.image" 
+          class="card-img-top product-img"
+          
+        >
+
+    
+        <div class="card-body text-center">
+
+          <h6 class="mb-2">{{ product.name }}</h6>
+
+          <p class="fw-bold mb-3">${{ product.price }}</p>
+
+          <div class="d-flex gap-2 justify-content-center">
+            <button 
+              class="btn btn-dark btn-sm"
+              (click)="goToDetails(product.id)"
+              
+            >
+              View
+            </button>
+
+            <button class="btn btn-outline-dark btn-sm">
+              Add
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

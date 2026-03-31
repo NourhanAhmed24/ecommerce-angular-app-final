@@ -1,0 +1,57 @@
+
+ <div class="register-container">
+  <div class="register-card">
+
+    <h2 class="brand-title">FashionHub</h2>
+    <p class="subtitle">Welcome back</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+
+      <div class="mb-4">
+        <label class="form-label">Email</label>
+        <input 
+          formControlName="email"
+          type="email"
+          class="form-control"
+          placeholder="Enter your email">
+      </div>
+      
+
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input 
+          formControlName="username"
+          type="text"
+          class="form-control"
+          placeholder="Enter your username">
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <input 
+          formControlName="password"
+          type="password"
+          class="form-control"
+          placeholder="Enter your password">
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Confirm Password</label>
+        <input 
+          formControlName="confirmPassword"
+          type="password"
+          class="form-control"
+          placeholder="Confirm your password">
+      </div>
+
+      
+
+      <button type="button" class="btn btn-dark w-100 login-btn" (click)="submit()">
+        Register
+      </button>
+
+      
+    </form>
+
+  </div>
+</div>

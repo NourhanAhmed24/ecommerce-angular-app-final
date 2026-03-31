@@ -1,0 +1,53 @@
+
+<button 
+  *ngIf="!error" 
+  class="btn btn-dark w-100" 
+  [disabled]="loading"
+>
+  <span *ngIf="loading" class="spinner-border spinner-border-sm"></span>
+  {{ loading ? 'Logging in...' : 'Login' }}
+</button>
+
+
+<div *ngIf="error" class="alert alert-danger mt-3 text-center">
+  {{ error }}
+</div>
+
+ <div class="login-container">
+  <div class="login-card">
+
+    <h2 class="brand-title">FashionHub</h2>
+    <p class="subtitle">Welcome back</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input 
+          formControlName="username"
+          type="text"
+          class="form-control"
+          placeholder="Enter your username">
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <input 
+          formControlName="password"
+          type="password"
+          class="form-control"
+          placeholder="Enter your password">
+      </div>
+
+      <button type="submit" class="btn btn-dark w-100 login-btn">
+        Login
+      </button>
+
+      <p class="signup-text">
+        Don't have an account? <a href="/register">Sign up</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
