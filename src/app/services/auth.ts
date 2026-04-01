@@ -11,11 +11,23 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string) {
+//   login(username: string, password: string) {
+//   return this.http.post<any>(
+//     'https://dummyjson.com/auth/login',
+//     { username, password },
+//     { headers: { 'Content-Type': 'application/json' }}
+//   );
+// }
+
+login(username: string, password: string) {
   return this.http.post<any>(
     'https://dummyjson.com/auth/login',
     { username, password },
     { headers: { 'Content-Type': 'application/json' }}
+  ).pipe(
+    tap(res => {
+      this.isLoggedIn = true; 
+    })
   );
 }
 
@@ -27,7 +39,7 @@ export class AuthService {
     this.isLoggedIn = false;
   }
 
-  getAuthStatus() {
-    return this.isLoggedIn;
-  }
+  getAuthStatus(): boolean {
+  return !!localStorage.getItem('token');
+}
 }
