@@ -57,3 +57,43 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+
+
+
+# Ecommerce Angular App
+
+A modern e-commerce web application built with Angular and Bootstrap, featuring a product catalog, product details pages, login/authentication, and a dashboard.
+
+---
+
+## Features
+
+- Product Listing: View all products with images, names, and prices.
+- Product Details: Click a product to see more details.
+- User Authentication: Login using dummy API credentials.
+- Dashboard: Admin-style dashboard for overview (placeholder for future features).
+- Responsive Design: Works on desktop, tablet, and mobile.
+- Bootstrap Styling: Modern, clean UI similar to fashion websites.
+
+---
+
+## Technologies Used
+
+- Frontend: Angular 17, TypeScript, Bootstrap 5
+- Services: DummyJSON API for login, use the following credentials: username: emilys , password:emilyspass
+- Routing: Angular Router for page navigation
+- State Management: Reactive Forms 
+- Version Control: Git & GitHub
+
+
+### Prerequisites
+
+Make sure you have Node.js and Angular CLI installed:
+
+```bash
+node -v
+npm -v
+ng version
